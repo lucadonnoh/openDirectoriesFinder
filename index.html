@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainDiv">
+        <h3 class="text-center">Open Directories Finder</h3>
+        <header class="text-center">Find open directories with this tool. It uses google's engine for the actual
+            search.</header>
+
+        <div class="input-group mb-3" id="search-container">
+            <div class="input-group-prepend">
+                <select class="custom-select custom-select-lg mb-3" id="select">
+                    <option id="1" selected>Everything</option>
+                    <option id="2">Video</option>
+                    <option id="3">Audio</option>
+                    <option id="4">eBook</option>
+                    <option id="5">Image</option>
+                    <option id="6">Archive</option>
+                </select>
+            </div>
+            <input type="text" class="form-control" placeholder="search here" id="searchbar">
+        </div>
+
+        <button type="button" class="btn btn-danger" id="search-button" onclick="search()">Search</button>
+
+        <footer>Made by Luca Donno</footer>
+    </div>
+
+    <script src="script.js" async defer></script>
+</body>
+
+</html>

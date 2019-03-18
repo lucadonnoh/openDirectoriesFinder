@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #343a40;
+    color: white;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 390px;
+}
+
+#select {
+    width: 40%;
+    color: black;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#search-container {
+    margin-top: 30px;
+}
+
+#searchbar {
+    height: 48px;
+}
+
+#search-button {
+    width: 100%;
+}
+
+footer {
+    margin-top: 50px;
+    color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainDiv {
+        width: 330px;
+    }
+  }
