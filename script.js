@@ -1,5 +1,11 @@
+$("#form").submit(function(e){e.preventDefault(); search()});
+
 function search() {
-    var searchTerm = document.getElementById("searchbar").value ;
+    var searchTerm = $("#searchbar").val();
+    if(searchTerm == "") {
+        return;
+    }
+
     var website = 'https://www.google.com/search?q=';
     var inURL = ' -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)';
     var videoFormats = ' +(wmv|mpg|avi|mp4|mkv|mov)';
@@ -9,27 +15,32 @@ function search() {
     var bookFormats = ' (pdf|epub|mob)';
     var inText = 'intext:"' + searchTerm + '"';
     
-    if(document.getElementById("1").selected){
-        link = website + inText + ' intitle:"index.of"' + inURL; 
-    }
-    else if(document.getElementById("2").selected){
-        link = website + inText + ' intitle:"index.of"' + videoFormats + inURL; 
-    }
-    else if(document.getElementById("3").selected){
-        link = website + inText + ' intitle:"index.of"' + audioFormats + inURL; 
-    }
-    else if(document.getElementById("4").selected){
-        link = website + inText + ' intitle:"index.of"' + bookFormats + inURL; 
-    }
-    else if(document.getElementById("5").selected){
-        link = website + inText + ' intitle:"index.of"' + imageFormats + inURL; 
-    }
-    else if(document.getElementById("6").selected){
-        link = website + 'intitle:"' + searchTerm + '"' + archiveFormats + inURL; 
-    }
 
+    let selectedOption=$("#select").val();
+    switch(selectedOption)
+    {
+        case "1":
+            link = website + inText + ' intitle:"index.of"' + inURL; 
+            break;
+        case "2":
+            link = website + inText + ' intitle:"index.of"' + videoFormats + inURL;
+            break;
+        case "3":
+            link = website + inText + ' intitle:"index.of"' + audioFormats + inURL;
+            break;
+        case "4":
+            link = website + inText + ' intitle:"index.of"' + bookFormats + inURL;
+            break;
+        case "5":
+            link = website + inText + ' intitle:"index.of"' + imageFormats + inURL;
+            break;
+        case "6":
+            link = website + 'intitle:"' + searchTerm + '"' + archiveFormats + inURL;
+            break;
+        default:
+            link = website + inText + ' intitle:"index.of"' + inURL;
+            break;
+    }
 
     window.open(link,'_blank');
-
-    
 }
